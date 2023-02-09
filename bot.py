@@ -151,7 +151,7 @@ def bot_message(message):
                     mylist.add(l.replace('\n', ''))
                 f.close()
                 if (message.text == "Добавить обход блокировок соцсетей"):
-                    url = "https://raw.githubusercontent.com/tas-unn/bypass_keenetic/master/socialnet.txt"
+                    url = "https://raw.githubusercontent.com/denisys16/bypass_keenetic/master/socialnet.txt"
                     s = requests.get(url).text
                     lst = s.split('\n')
                     for l in lst:
@@ -429,7 +429,7 @@ def bot_message(message):
                 bot.send_message(message.chat.id, "Установили мосты tor");
                 f = open("/opt/etc/unblock/tor.txt", 'w')
                 f.close()
-                url = "https://raw.githubusercontent.com/tas-unn/bypass_keenetic/master/unblock_ipset.sh"
+                url = "https://raw.githubusercontent.com/denisys16/bypass_keenetic/master/unblock_ipset.sh"
                 s = requests.get(url).text
                 s = s.replace("40500", dnsovertlsport)
                 f = open("/opt/bin/unblock_ipset.sh", 'w')
@@ -437,7 +437,7 @@ def bot_message(message):
                 f.close()
                 os.chmod('/opt/bin/unblock_ipset.sh', stat.S_IXUSR)
 
-                url = "https://raw.githubusercontent.com/tas-unn/bypass_keenetic/master/unblock.dnsmasq"
+                url = "https://raw.githubusercontent.com/denisys16/bypass_keenetic/master/unblock.dnsmasq"
                 s = requests.get(url).text
                 s = s.replace("40500", dnsovertlsport)
                 f = open("/opt/bin/unblock_dnsmasq.sh", 'w')
@@ -445,7 +445,7 @@ def bot_message(message):
                 f.close()
                 os.chmod('/opt/bin/unblock_dnsmasq.sh', stat.S_IXUSR)
 
-                url = "https://raw.githubusercontent.com/tas-unn/bypass_keenetic/master/100-redirect.sh"
+                url = "https://raw.githubusercontent.com/denisys16/bypass_keenetic/master/100-redirect.sh"
                 s = requests.get(url).text
                 s = s.replace("1082", localportsh).replace("9141", localporttor).replace("192.168.1.1", routerip)
                 f = open("/opt/etc/ndm/netfilter.d/100-redirect.sh", 'w')
@@ -453,7 +453,7 @@ def bot_message(message):
                 f.close()
                 os.chmod('/opt/etc/ndm/netfilter.d/100-redirect.sh', stat.S_IXUSR)
 
-                url = "https://raw.githubusercontent.com/tas-unn/bypass_keenetic/master/dnsmasq.conf"
+                url = "https://raw.githubusercontent.com/denisys16/bypass_keenetic/master/dnsmasq.conf"
                 s = requests.get(url).text
                 s = s.replace("40500", dnsovertlsport).replace("40508", dnsoverhttpsport).replace("192.168.1.1", routerip)
                 f = open("/opt/etc/dnsmasq.conf", 'w')
